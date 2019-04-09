@@ -78,119 +78,108 @@ class _UploadPageState extends State<Upload> {
         appBar: new AppBar(
           title: new Text('Upload Post'),
         ),
+
         body: ListView(
-          shrinkWrap: true,
-          children: <Widget>[
-        Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-        Stack(
-        children: <Widget>[
-              images == null
-                  ? new Container(
-                height: 300.0,
-                width: 400.0,
-                child: new Icon(
-                  Icons.image,
-                  size: 250.0,
-                  color: Theme.of(context).primaryColor,
-                ),
-              )
-                  : new SizedBox(
-                height: 300.0,
-                width: 400.0,
-                child: new ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (BuildContext context, int index) =>
-                  new Padding(
-                    padding: const EdgeInsets.all(5.0),
-                    child: new Image.file(
-                      new File(images[index].toString()),
-                    ),
-                  ),
-                  itemCount: images.length,
-                ),
-              ),
-              new Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: new Text('Error Dectected'),
-              ),
-              new RaisedButton.icon(
-                  onPressed: initMultiPickUp,
-                  icon: new Icon(Icons.image),
-                  label: new Text("Select Images")
-              ),
-
-              SizedBox(height: 15.0,),
-
-              TextFormField(
-
-                decoration: new InputDecoration(
-                  labelText: 'Title',
-                  contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-
-                ),),
-        SizedBox(height: 15.0,),
-
-        TextFormField(
-
-          decoration: new InputDecoration(
-            labelText: 'Description',
-            contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-
-          ),),
-
-              SizedBox(height: 15.0,),
-              RaisedButton(
-
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(24),
-                ),
-                padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 100.0),
-                child: Text(
-                  'Add a new post', ),
-                textColor: Colors.white,
-                color: Colors.pink,
-                // onPressed: validateAndSave,
-                onPressed: (){
-                  _moveToHome();
-
-
-                },
-
-              ),
-
-              Padding(
-                  padding:EdgeInsets.only(right: 15.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
+            shrinkWrap: true,
+            children: <Widget>[
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[
+                  Stack(
                     children: <Widget>[
-                      Material(
-                          elevation: 4.0,
-                          borderRadius: BorderRadius.circular(20.0),
-                          child: Container(
-                            height: 40.0,
-                            width: 40.0,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(4.0)
-
-                            ),
-                            child: Icon(
-                              Icons.favorite,
-                              //color: Colors.red,
-                            ),
-                          )
+                      images == null
+                          ? new Container(
+                        height: 300.0,
+                        width: 400.0,
+                        child: new Icon(
+                          Icons.image,
+                          size: 250.0,
+                          color: Theme.of(context).primaryColor,
+                        ),
                       )
+                          : new SizedBox(
+                        height: 300.0,
+                        width: 400.0,
+                        child: new ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (BuildContext context, int index) =>
+                          new Padding(
+                            padding: const EdgeInsets.all(5.0),
+                            child: new Image.file(
+                              new File(images[index].toString()),
+                            ),
+                          ),
+                          itemCount: images.length,
+                        ),
+                      ),
+                      SizedBox(height:20.0),
+
+
+
                     ],
-                  )
+                  ),
+                  SizedBox(height:20.0),
+
+                  Padding(
+                    padding:EdgeInsets.only(left: 5.0),
+                    child: new RaisedButton.icon(
+                        onPressed: initMultiPickUp,
+                        icon: new Icon(Icons.image),
+                        label: new Text("Select Images")
+                    ),
+
+
+                  ),
+
+                  SizedBox(height: 15.0,),
+
+                  TextFormField(
+
+                    decoration: new InputDecoration(
+                      labelText: 'Title',
+                      contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+
+                    ),),
+                  SizedBox(height: 15.0,),
+
+                  TextFormField(
+
+                    decoration: new InputDecoration(
+                      labelText: 'Description',
+                      contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+
+                    ),),
+                  SizedBox(height: 15.0,),
+                  RaisedButton(
+
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(24),
+                    ),
+                    padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 100.0),
+                    child: Text(
+                      'Add a new post', ),
+                    textColor: Colors.white,
+                    color: Colors.pink,
+                    // onPressed: validateAndSave,
+                    onPressed: (){
+                      _moveToHome();
+
+
+                    },
+
+                  ),
+
+
+
+
+                ],
               ),
 
 
-            ],
-          ),
-        ]),]
+            ]
 
-      ),
+        ),
+        
     ));
     }
 
