@@ -5,7 +5,10 @@ The application further aims to physically bring people together to discuss topi
 future work by implementing server side to store the users posts.
 
 Dashboard
+
+
 ![](image1.png)
+
 
 UserPosts
 
