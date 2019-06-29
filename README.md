@@ -4,4 +4,12 @@ then express their preference among the alternatives by voting, they think best 
 The application further aims to physically bring people together to discuss topics in-person. The applications needs
 future work by implementing server side to store the users posts.
 
+Dashboard
+![](image1.png)
+
+UserPosts
+
+![](image2.png)
+
+
 
